@@ -1,0 +1,8 @@
+streamlit
+tensorflow
+pillow
+scikit-image
+lpips
+torch
+torchvision
+numpy
