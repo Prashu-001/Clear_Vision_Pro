@@ -124,7 +124,7 @@ elif page == "Restore Images":
             st.image(uploaded_file, use_container_width=True)
 
         with col2:
-            model_type = st.selectbox("Select Model", ["WGAN (Fast)", "SRGAN (Balanced)", "SRGAN (High Quality)"])
+            model_type = st.selectbox("Select Model", ["WGAN (Fast)", "SRGAN (Balanced)", "SRWGAN (High Quality)"])
             if st.button("Restore Image", use_container_width=True):
                 with st.spinner("Processing..."):
                     from utils.image_utils import preprocess_image, postprocess_image, to_tensor
