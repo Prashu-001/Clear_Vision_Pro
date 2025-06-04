@@ -22,7 +22,7 @@ def postprocess_image(output: np.ndarray) -> bytes:
         output = output[0]
 
     # Scale back from [-1, 1] to [0, 255]
-    output=((output[0]+1.0)*127.5).clip(0,255).astype(np.uint8)
+    output=((output+1.0)*127.5).clip(0,255).astype(np.uint8)
     img = Image.fromarray(output)
     img_bytes = io.BytesIO()
     img.save(img_bytes, format="PNG")
