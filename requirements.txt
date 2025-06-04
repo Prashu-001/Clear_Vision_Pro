@@ -2,7 +2,7 @@ streamlit
 tensorflow
 pillow
 scikit-image
-lpips
+numpy
 torch
 torchvision
-numpy
+git+https://github.com/richzhang/PerceptualSimilarity
