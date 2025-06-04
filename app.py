@@ -149,8 +149,8 @@ elif page == "Restore Images":
                     output = model(input_tensor,training=False)
                     elapsed_time = time.time() - start_time
 
-                    output_img = tf.clip_by_value((output[0] + 1.0) * 127.5, 0, 255)
-                    output_img = tf.cast(output_img, tf.uint8).numpy()
+                    output_img = tensorflow.clip_by_value((output[0] + 1.0) * 127.5, 0, 255)
+                    output_img = tensorflow.cast(output_img, tensorflow.uint8).numpy()
                     original_img = np.array(img.resize(output_img.shape[:2][::-1]))
 
                     psnr_val, ssim_val, lips_val = compute_metrics(original_img, output_img)
