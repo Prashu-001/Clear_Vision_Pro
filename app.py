@@ -146,7 +146,7 @@ elif page == "Restore Images":
 
                     input_tensor = preprocess_image(img, model_key)
                     start_time = time.time()
-                    output = model.predict(input_tensor)
+                    output = model(input_tensor,training=False)
                     elapsed_time = time.time() - start_time
 
                     output_img = ((output[0] + 1.0) * 127.5).clip(0, 255).astype(np.uint8)
