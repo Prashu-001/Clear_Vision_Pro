@@ -1,7 +1,7 @@
 import tensorflow as tf
 from SRgan import Generator
 
-class DepthToSpace(Layer):
+class DepthToSpace(tf.keras.layers.Layer):
     def __init__(self, block_size, **kwargs):
         super().__init__(**kwargs)
         self.block_size = block_size
