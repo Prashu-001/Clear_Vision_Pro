@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import time
+import tensorflow
 from utils.model_loader import load_wgan, load_srgan, load_srwgan
 from utils.image_utils import preprocess_image, postprocess_image
 
