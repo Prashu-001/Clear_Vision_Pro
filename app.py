@@ -124,7 +124,7 @@ elif page == "Restore Images":
             st.image(uploaded_file, use_container_width=True)
 
         with col2:
-            model_type = st.selectbox("Select Model", ["WGAN (Fast)", "SRGAN (Balanced)", "SRWGAN (High Quality)"])
+            model_type = st.selectbox("Select Model", ["WGAN (Fast)", "SRGAN (Balanced)", "SRW-GAN (High Quality)"])
             if st.button("Restore Image", use_container_width=True):
                 with st.spinner("Processing..."):
                     from utils.image_utils import preprocess_image, postprocess_image, to_tensor
@@ -141,7 +141,7 @@ elif page == "Restore Images":
                     elif model_type == "SRGAN (Balanced)":
                         model = load_srgan()
                         model_key = "SRGAN"
-                    elif model_type == "SRWGAN (High Quality)":
+                    elif model_type == "SRW-GAN (High Quality)":
                         model = load_srwgan()
                         model_key = "SRWGAN"
 
