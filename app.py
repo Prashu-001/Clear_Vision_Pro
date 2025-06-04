@@ -141,7 +141,7 @@ elif page == "Restore Images":
                     elif model_type == "SRGAN (Balanced)":
                         model = load_srgan()
                         model_key = "SRGAN"
-                    elif model_type == "SRW-GAN (High Quality)":
+                    elif model_type == "SRGAN (High Quality)":
                         model = load_srwgan()
                         model_key = "SRWGAN"
 
