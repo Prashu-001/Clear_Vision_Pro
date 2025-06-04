@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+import tensorflow as tf
 import io
 
 def preprocess_image(img: Image.Image, model_type: str) -> np.ndarray:
@@ -21,7 +22,8 @@ def postprocess_image(output: np.ndarray) -> bytes:
         output = output[0]
 
     # Scale back from [-1, 1] to [0, 255]
-    output = ((output + 1.0) * 127.5).clip(0, 255).astype(np.uint8)
+    output_img = tf.clip_by_value((output[0] + 1.0) * 127.5, 0, 255)
+    output = tf.cast(output_img, tf.uint8).numpy()
     img = Image.fromarray(output)
     img_bytes = io.BytesIO()
     img.save(img_bytes, format="PNG")
