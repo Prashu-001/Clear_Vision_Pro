@@ -135,15 +135,16 @@ elif page == "Restore Images":
 
                     img = Image.open(uploaded_file).convert("RGB")
 
-                    if "WGAN" in model_type:
+                    if model_type == "WGAN (Fast)":
                         model = load_wgan()
                         model_key = "WGAN"
-                    elif "SRGAN" in model_type:
+                    elif model_type == "SRGAN (Balanced)":
                         model = load_srgan()
                         model_key = "SRGAN"
-                    else:
+                    elif model_type == "SRWGAN (High Quality)":
                         model = load_srwgan()
                         model_key = "SRWGAN"
+
 
                     input_tensor = preprocess_image(img, model_key)
                     start_time = time.time()
