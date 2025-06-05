@@ -160,10 +160,7 @@ elif page == "Restore Images":
 
                     img = Image.open(uploaded_file).convert("RGB")
 
-                    if model_type == "WGAN (Fast)":
-                        model = load_wgan()
-                        model_key = "WGAN"
-                    elif model_type == "SRGAN (Balanced)":
+                    if model_type == "SRGAN (Balanced)":
                         model = load_srgan()
                         model_key = "SRGAN"
                     elif model_type == "SRWGAN (High Quality)":
