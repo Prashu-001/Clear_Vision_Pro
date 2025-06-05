@@ -46,19 +46,34 @@ st.markdown("""
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-# For dark mode support :)
+/* For dark mode support */
 @media (prefers-color-scheme: dark) {
-    body, .feature-card, .team-member {
-        background: #121212 !important;
+    body {
+        background-color: #0d0d0d !important;
         color: #e0e0e0 !important;
-        box-shadow: none !important;
     }
+
     .header {
         background: linear-gradient(135deg, #4a5de2, #7a5ee3) !important;
         color: #eee !important;
     }
+
+    .feature-card,
+    .team-member,
+    .stImage {
+        background: #121212 !important;
+        color: #e0e0e0 !important;
+        box-shadow: none !important;
+    }
+
     .team-member div {
         color: #ccc !important;
+    }
+
+    /* Streamlit sidebar dark mode */
+    section[data-testid="stSidebar"] {
+        background-color: #1c1c1c !important;
+        color: #e0e0e0 !important;
     }
 }
 </style>
