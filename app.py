@@ -168,11 +168,11 @@ elif page == "Restore Images":
                 )
             with col2:
                 st.markdown("#### Processing Time")
-                metrics = st.session_state.metrics
+                
                 st.markdown(f"""
                 <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
                     <div>Time</div>
-                    <b>{metrics['Time']}</b>
+                    <b>{st.session_state.time_taken}</b>
                 </div>
                 """, unsafe_allow_html=True)
 
