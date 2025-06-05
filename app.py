@@ -148,9 +148,7 @@ elif page == "Restore Images":
                     output_img = ((output[0] + 1.0) * 127.5).clip(0, 255).astype(np.uint8)
 
                     st.session_state.restored_image = postprocess_image(output)
-                    st.session_state.metrics = {
-                        "Time": f"{elapsed_time:.2f}s"
-                    }
+                    st.session_state["elapsed_time"] = f"{elapsed_time:.2f}s"
                     st.success("Restoration complete!")
 
         if 'restored_image' in st.session_state:
@@ -167,14 +165,14 @@ elif page == "Restore Images":
                     mime="image/png"
                 )
             with col2:
-                st.markdown("#### Processing Time")
-                
-                st.markdown(f"""
-                <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                    <div>Time</div>
-                    <b>{st.session_state.time_taken}</b>
-                </div>
-                """, unsafe_allow_html=True)
+                if "elapsed_time" in st.session_state:
+                    st.markdown("#### Processing Time")
+                    st.markdown(f"""
+                    <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
+                        <div>Time</div>
+                        <b>{st.session_state["elapsed_time"]}</b>
+                    </div>
+                    """, unsafe_allow_html=True)
 
 
 
