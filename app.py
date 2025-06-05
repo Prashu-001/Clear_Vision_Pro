@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import time
 import numpy as np
-from utils.model_loader import load_wgan, load_srgan, load_srwgan
+from utils.model_loader import load_srgan, load_srwgan
 from utils.image_utils import preprocess_image, postprocess_image
 
 # Page config
@@ -150,7 +150,7 @@ elif page == "Restore Images":
             st.image(uploaded_file, use_container_width=True)
 
         with col2:
-            model_type = st.selectbox("Select Model", ["WGAN (Fast)", "SRGAN (Balanced)", "SRWGAN (High Quality)"])
+            model_type = st.selectbox("Select Model", ["SRGAN (Balanced)", "SRWGAN (High Quality)"])
             if st.button("Restore Image", use_container_width=True):
                 with st.spinner("Processing..."):
                     from utils.image_utils import preprocess_image, postprocess_image, to_tensor
@@ -250,17 +250,9 @@ elif page == "Model Info":
     </div>
     """, unsafe_allow_html=True)
     
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("""
-        <div class="feature-card">
-            <h3>🚀 WGAN</h3>
-            <p>Fast Wasserstein GAN for quick restorations</p>
-            <p><strong>Best for:</strong> Real-time applications</p>
-        </div>
-        """, unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
     
-    with col2:
+    with col1:
         st.markdown("""
         <div class="feature-card">
             <h3>⚡ SRGAN</h3>
@@ -269,7 +261,7 @@ elif page == "Model Info":
         </div>
         """, unsafe_allow_html=True)
     
-    with col3:
+    with col2:
         st.markdown("""
         <div class="feature-card">
             <h3>🎨 SRWGAN</h3>
