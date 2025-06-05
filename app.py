@@ -128,7 +128,6 @@ elif page == "Restore Images":
             if st.button("Restore Image", use_container_width=True):
                 with st.spinner("Processing..."):
                     from utils.image_utils import preprocess_image, postprocess_image, to_tensor
-                    from utils.metrics import compute_metrics
                     import numpy as np
                     from PIL import Image
                     import time
@@ -145,23 +144,16 @@ elif page == "Restore Images":
                         model = load_srwgan()
                         model_key = "SRWGAN"
 
-
                     input_tensor = preprocess_image(img, model_key)
                     start_time = time.time()
-                    output = model(input_tensor,training=False)
+                    output = model(input_tensor, training=False)
                     elapsed_time = time.time() - start_time
-                    
-                    output=output.numpy()
-                    output_img=((output[0]+1.0)*127.5).clip(0,255).astype(np.uint8)
-                    original_img = np.array(img.resize(output_img.shape[:2][::-1]))
 
-                    psnr_val, ssim_val, lips_val = compute_metrics(original_img, output_img)
+                    output = output.numpy()
+                    output_img = ((output[0] + 1.0) * 127.5).clip(0, 255).astype(np.uint8)
 
                     st.session_state.restored_image = postprocess_image(output)
                     st.session_state.metrics = {
-                        "PSNR": round(psnr_val, 2),
-                        "SSIM": round(ssim_val, 3),
-                        "LIPS": round(lips_val, 3),
                         "Time": f"{elapsed_time:.2f}s"
                     }
                     st.success("Restoration complete!")
@@ -180,28 +172,15 @@ elif page == "Restore Images":
                     mime="image/png"
                 )
             with col2:
-                st.markdown("#### Evaluation Metrics")
+                st.markdown("#### Processing Time")
                 metrics = st.session_state.metrics
                 st.markdown(f"""
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                    <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                        <div>PSNR</div>
-                        <b>{metrics['PSNR']} dB</b>
-                    </div>
-                    <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                        <div>SSIM</div>
-                        <b>{metrics['SSIM']}</b>
-                    </div>
-                    <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                        <div>LIPS</div>
-                        <b>{metrics['LIPS']}</b>
-                    </div>
-                    <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                        <div>Time</div>
-                        <b>{metrics['Time']}</b>
-                    </div>
+                <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
+                    <div>Time</div>
+                    <b>{metrics['Time']}</b>
                 </div>
                 """, unsafe_allow_html=True)
+
 
 
 # About Team Page
