@@ -74,8 +74,9 @@ if page == "Home":
         <p>Transform degraded images into high-quality visuals</p>
     </div>
     """, unsafe_allow_html=True)
-    
+
     col1, col2 = st.columns(2)
+
     with col1:
         st.markdown("""
         <div class="feature-card">
@@ -88,27 +89,21 @@ if page == "Home":
             </ul>
         </div>
         """, unsafe_allow_html=True)
-    
+
     with col2:
         st.markdown("""
         <div class="feature-card">
-            <h3>📊 Performance Metrics</h3>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                    <div>PSNR</div>
-                    <b>32.5 dB</b>
-                </div>
-                <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                    <div>SSIM</div>
-                    <b>0.92</b>
-                </div>
-            </div>
+            <h3>📊 AI Performance</h3>
+            <p>Our models use advanced GANs and perceptual loss to restore details in your degraded images.</p>
         </div>
         """, unsafe_allow_html=True)
-    
-    st.image("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop", 
-             use_container_width=True,
-             caption="Before and After Comparison")
+
+    st.image(
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop",
+        use_container_width=True,
+        caption="Before and After Comparison"
+    )
+
 
 # Restore Images Page with Model Integration
 elif page == "Restore Images":
