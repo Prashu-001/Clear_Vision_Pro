@@ -165,8 +165,9 @@ elif page == "Restore Images":
                     mime="image/png"
                 )
             with col2:
-                if "time_taken" in st.session_state:
-                    st.markdown("#### Processing Time")
+                st.markdown("#### Processing Time")
+                time_taken = st.session_state.get("time_taken",None)
+                if time_taken:
                     st.markdown(f"""
                     <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
                         <div>Time</div>
