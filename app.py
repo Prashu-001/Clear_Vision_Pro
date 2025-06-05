@@ -39,11 +39,27 @@ st.markdown("""
     background: white;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    color: black;
 }
 .stImage {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+# For dark mode support :)
+@media (prefers-color-scheme: dark) {
+    body, .feature-card, .team-member {
+        background: #121212 !important;
+        color: #e0e0e0 !important;
+        box-shadow: none !important;
+    }
+    .header {
+        background: linear-gradient(135deg, #4a5de2, #7a5ee3) !important;
+        color: #eee !important;
+    }
+    .team-member div {
+        color: #ccc !important;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
