@@ -157,7 +157,7 @@ elif page == "Restore Images":
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("### Original Image")
-            st.image(uploaded_file, use_container_width=True)
+            st.image(uploaded_file)
 
         with col2:
             model_type = st.selectbox("Select Model", ["SRGAN (Balanced)", "SRWGAN (High Quality)"])
@@ -195,7 +195,7 @@ elif page == "Restore Images":
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("#### Restored Image")
-                st.image(st.session_state.restored_image, use_container_width=True)
+                st.image(st.session_state.restored_image)
                 st.download_button(
                     label="Download Image",
                     data=st.session_state.restored_image,
