@@ -46,6 +46,16 @@ st.markdown("""
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+/* Limit image width for uploaded and restored images */
+.stImage > img {
+    max-width: 350px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    display: block;
+}
 /* For dark mode support */
 @media (prefers-color-scheme: dark) {
     body {
