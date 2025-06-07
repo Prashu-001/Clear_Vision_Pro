@@ -1,7 +1,7 @@
 # 📌 Clear Vision: Image Super-Resolution using GANs
 
 <b> Application link </b>: [Clear-Vision](https://clear-vision-pro.streamlit.app/) <br>
-<b>Note: Use 64x64 pixel images for better results because model upsamples the images to 128x128</b><br>
+<b>Note: Use 64x64(or less than 128x128) pixel images for better results because model upsamples the images to 128x128</b><br>
 <b> You can try these Corrupted samples for testing (64x64):</b> [Corrupted](https://drive.google.com/drive/folders/1bzkac88TPpf9ozlXfy3wUcl_Vyu6VxHj?usp=sharing) <br>
 
 ## 📄 Overview
