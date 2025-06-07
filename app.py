@@ -202,11 +202,27 @@ elif page == "Restore Images":
                 time_taken = st.session_state.get("time_taken",None)
                 if time_taken:
                     st.markdown(f"""
-                    <div style="background: #f8faff; padding: 1rem; border-radius: 10px; text-align: center;">
-                        <div>Time</div>
-                        <b>{st.session_state.time_taken}</b>
-                    </div>
-                    """, unsafe_allow_html=True)
+                    <style>
+                    .time-box {{
+                        padding: 1rem;
+                        border-radius: 10px;
+                        text-align: center;
+                        background-color: #f8faff;
+                        color: #000;
+                     }}
+                     @media (prefers-color-scheme: dark) {{
+                         .time-box {{
+                             background-color: #1e1e1e;
+                             color: #e0e0e0;
+                          }}
+                      }}
+                      </style>
+                      <div class="time-box">
+                          <div>Time</div>
+                          <b>{st.session_state.time_taken}</b>
+                      </div>
+                      """, unsafe_allow_html=True)
+
                 else:
                     st.info("click 'Restore Image' to see the processing time.")
 
