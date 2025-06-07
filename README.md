@@ -80,7 +80,7 @@ Each model was tested on corrupted images to assess real-world performance degra
 
 ## 📁 Folder Structure
 
-
+```
 Clear-Vision-Pro/
 ├── .devcontainer/
 │   └── devcontainer.json
@@ -116,7 +116,7 @@ Clear-Vision-Pro/
 ├── app.py
 ├── requirements.txt
 └── runtime.txt
-
+```
 
 <h2>💻 Tech Stack / Frameworks</h2>
 
