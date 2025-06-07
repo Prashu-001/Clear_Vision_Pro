@@ -126,6 +126,7 @@ Clear-Vision-Pro/
   </li>
   <br>
   <li><strong>Web Interface:</strong><br>
+      <code>HTML</code> <br><code>CSS</code>
       <code>Streamlit</code> – A fast and interactive web app framework used to deploy the Clear Vision interface for uploading images and displaying results.
   </li>
   <br>
