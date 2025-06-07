@@ -45,14 +45,6 @@ st.markdown("""
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-/* Limit image width for uploaded and restored images */
-.stImage > img {
-    max-width: 350px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     margin: 0 auto;
     display: block;
 }
@@ -153,11 +145,14 @@ elif page == "Restore Images":
 
     uploaded_file = st.file_uploader("Upload a degraded image", type=["jpg", "png", "jpeg"])
 
+    #width Slider
+    selected_width = st.slider("Select Image Display Width", min_value=200, max_value=800, value=350)
+
     if uploaded_file is not None:
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("### Original Image")
-            st.image(uploaded_file)
+            st.image(uploaded_file,width=selected_width)
 
         with col2:
             model_type = st.selectbox("Select Model", ["SRGAN (Balanced)", "SRWGAN (High Quality)"])
@@ -195,7 +190,7 @@ elif page == "Restore Images":
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("#### Restored Image")
-                st.image(st.session_state.restored_image)
+                st.image(st.session_state.restored_image,width=selected_width)
                 st.download_button(
                     label="Download Image",
                     data=st.session_state.restored_image,
