@@ -95,7 +95,7 @@ with st.sidebar:
     st.markdown("""
     <div style="text-align: center;">
         <small>Powered by Streamlit</small><br>
-        <small>© 2023 CLEAR-VISION</small>
+        <small>© 2025 CLEAR-VISION</small>
     </div>
     """, unsafe_allow_html=True)
 
