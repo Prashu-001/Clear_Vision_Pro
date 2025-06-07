@@ -250,7 +250,7 @@ elif page == "About Team":
         </div>
         <div class="team-member">
             <div style="width: 40px; height: 40px; background: #6e8efb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; color: white; font-weight: bold;">V</div>
-            <div><h4 style="margin: 0;">Varsha</h4></div>
+            <div><h4 style="margin: 0;">Varssha</h4></div>
         </div>
         <div class="team-member">
             <div style="width: 40px; height: 40px; background: #a777e3; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; color: white; font-weight: bold;">K</div>
