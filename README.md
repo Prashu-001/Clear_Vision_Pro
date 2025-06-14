@@ -139,7 +139,7 @@ Clear-Vision-Pro/
   </li>
   <br>
   <li><strong>Image Processing:</strong><br>
-       <code>OpenCV</code> – For reading, resizing, and applying filters to images before and after super-resolution.
+       <code>OpenCV</code> - For reading, resizing, and applying filters to images before and after super-resolution.
   </li>
 </ul>
 
