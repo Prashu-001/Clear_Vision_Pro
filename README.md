@@ -145,7 +145,7 @@ Clear-Vision-Pro/
 
 
 
-## 📚 References
+## 📚 References:
 
 - [SRGAN Paper](https://arxiv.org/abs/1609.04802)
 - [WGAN Paper](https://arxiv.org/abs/1701.07875)
